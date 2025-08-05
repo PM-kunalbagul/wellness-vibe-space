@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import groupYogaImg from "@/assets/group-yoga.jpg";
+import corporateYogaImg from "@/assets/corporate-yoga.jpg";
+import onlineYogaImg from "@/assets/online-yoga.jpg";
+import studioImg from "@/assets/studio-interior.jpg";
 import { format } from "date-fns";
 
 const Services = () => {
@@ -25,27 +29,35 @@ const Services = () => {
   const services = [
     {
       title: "Personal Training",
-      description: "One-on-one sessions tailored to your specific needs and goals.",
+      description: "Personalized one-on-one sessions designed to meet your unique wellness goals. Whether you're a beginner or advanced practitioner, receive individual attention and customized sequences.",
       icon: User,
-      price: "From $80/session",
+      price: "Starting from ₹2,000/session",
+      image: studioImg,
+      features: ["Customized yoga sequences", "Personal goal setting", "Injury modification", "Flexible scheduling"]
     },
     {
       title: "Group Classes",
-      description: "Join our community in energizing group yoga sessions.",
+      description: "Join our vibrant community in energizing group sessions. Experience the collective energy and support of like-minded practitioners in a welcoming environment.",
       icon: Users,
-      price: "From $25/class",
+      price: "₹800/class or ₹6,000/month",
+      image: groupYogaImg,
+      features: ["All levels welcome", "Community support", "Variety of styles", "Social connection"]
     },
     {
       title: "Corporate Wellness",
-      description: "Bring wellness to your workplace with customized programs.",
+      description: "Transform your workplace culture with yoga. Reduce stress, improve productivity, and enhance employee well-being with our tailored corporate programs.",
       icon: Building2,
-      price: "Custom pricing",
+      price: "Custom pricing available",
+      image: corporateYogaImg,
+      features: ["On-site sessions", "Stress management", "Team building", "Flexible programs"]
     },
     {
       title: "Online Sessions",
-      description: "Practice from anywhere with live online instruction.",
+      description: "Practice from the comfort of your home with our live interactive online classes. Stay connected to your practice no matter where you are.",
       icon: Video,
-      price: "From $60/session",
+      price: "₹500/class or ₹3,000/month",
+      image: onlineYogaImg,
+      features: ["Live interaction", "Recorded sessions", "Global community", "Convenient timing"]
     },
   ];
 
@@ -57,21 +69,46 @@ const Services = () => {
     <div className="bg-cream min-h-screen">
       <Navigation />
       <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-earth mb-12 text-center animate-fade-up">
-          Services
-        </h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-earth mb-4 animate-fade-up">
+            Our Yoga Services
+          </h1>
+          <p className="text-lg text-earth/80 max-w-3xl mx-auto animate-fade-up">
+            Choose from our range of authentic yoga offerings designed to support your wellness journey. 
+            Each service is crafted with care to honor traditional practices while meeting modern needs.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="border-sage/20 animate-fade-up">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <service.icon className="h-8 w-8 text-sage" />
-                  <CardTitle className="text-xl text-earth">{service.title}</CardTitle>
+            <Card key={index} className="border-sage/20 animate-fade-up overflow-hidden group">
+              {/* Service Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-earth/20"></div>
+                <div className="absolute top-4 left-4">
+                  <service.icon className="h-8 w-8 text-white drop-shadow-lg" />
                 </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
+              </div>
+              
+              <CardContent className="space-y-4 p-6">
+                <h2 className="text-2xl font-semibold text-earth">{service.title}</h2>
                 <p className="text-earth/80">{service.description}</p>
-                <p className="font-semibold text-earth">{service.price}</p>
+                
+                {/* Features */}
+                <ul className="grid grid-cols-2 gap-2 text-sm text-earth/70">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-sage rounded-full"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <p className="font-semibold text-earth text-lg">{service.price}</p>
                 <Sheet>
                   <SheetTrigger asChild>
                     <Button 
