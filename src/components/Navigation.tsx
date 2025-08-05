@@ -20,7 +20,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="text-earth text-xl font-semibold">
-              YogaLife
+              Bend & Breath Yoga Studio
             </Link>
           </div>
           

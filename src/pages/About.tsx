@@ -12,7 +12,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 animate-fade-up">
             <p className="text-earth/80 leading-relaxed">
-              Welcome to YogaLife! I'm Sarah (you can customize this), a certified yoga instructor passionate about helping others discover the transformative power of yoga. With over 5 years of teaching experience, I specialize in making yoga accessible to practitioners of all levels.
+              Welcome to Bend & Breath Yoga Studio! I'm Nirali Hania, a certified yoga instructor passionate about helping others discover the transformative power of yoga. With over 5 years of teaching experience, I specialize in making yoga accessible to practitioners of all levels.
             </p>
             <p className="text-earth/80 leading-relaxed">
               My journey into yoga began during my corporate career when I discovered its ability to reduce stress and improve overall well-being. This personal transformation inspired me to become an instructor and share these benefits with others.

@@ -40,7 +40,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center gap-3 text-earth/80">
                     <Instagram className="h-5 w-5 text-sage" />
-                    <a href="#" className="hover:text-sage transition-colors">@yogalife</a>
+                    <a href="#" className="hover:text-sage transition-colors">@bendbreathyoga</a>
                   </div>
                 </div>
               </CardContent>
